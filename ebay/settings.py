@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'category',
     'account',
     'store',
+    'carts',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'category.context_processors.menu_links',
+                'carts.context_processors.counter',
             ],
         },
     },
@@ -85,6 +87,10 @@ DATABASES = {
     }
 }
 
+
+# SESSION_EXPIRE_SECONDS = 3600  # 1 hour
+# SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+# SESSION_TIMEOUT_REDIRECT = 'account/login'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
